@@ -21,4 +21,4 @@ app.post("/addnewpost",(req,res)=>{
     const newpost=new Post(req.body.post);
     newpost.save().then(res.send("Saved successsfully!!")).catch((err)=>{res.send(err)});
 })
-app.listen(5000,()=>{console.log("server started on port 5000");});
+app.listen(process.env.PORT ||5000,()=>{console.log("server started on port 5000");});
